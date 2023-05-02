@@ -47,5 +47,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Require Image for Create New Account</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Require Image for Create New Account</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Require Image for Create New Account</string>
 </dict>
 </plist>
