@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "944506985263",
+    "project_id": "notiandchat",
+    "storage_bucket": "notiandchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944506985263:android:34fb0e88ab94dae39a1fda",
+        "android_client_info": {
+          "package_name": "com.doramon.notiandchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944506985263-tr02ri4bmrugvffp59pendg6ud17b62n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVD66BJcH0yGd814Q5e3IRyzLUcaWC-Gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944506985263-tr02ri4bmrugvffp59pendg6ud17b62n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
