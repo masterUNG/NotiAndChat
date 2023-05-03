@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:notiandchat/states/chat.dart';
 import 'package:notiandchat/states/create_account.dart';
 import 'package:notiandchat/utility/app_controller.dart';
+import 'package:notiandchat/utility/app_snackbar.dart';
 import 'package:notiandchat/widgets/widget_button.dart';
 import 'package:notiandchat/widgets/widget_form.dart';
 import 'package:notiandchat/widgets/widget_icon_button.dart';
@@ -64,7 +67,32 @@ class _AuthenState extends State<Authen> {
                         margin: const EdgeInsets.only(top: 8),
                         child: WidgetButton(
                           label: 'Login',
-                          pressFunc: () {},
+                          pressFunc: () async {
+                            if ((emailController.text.isEmpty) ||
+                                (passwordController.text.isEmpty)) {
+                              AppSnackBar(
+                                      title: 'Have Space',
+                                      message: 'Please Fill Every Blank')
+                                  .errorSnackBar();
+                            } else {
+                              await FirebaseAuth.instance
+                                  .signInWithEmailAndPassword(
+                                      email: emailController.text,
+                                      password: passwordController.text)
+                                  .then((value) {
+                                Get.offAll(const Chat());
+                                AppSnackBar(
+                                        title: 'Welcome',
+                                        message: 'Login Success')
+                                    .normalSnackBar();
+                              }).catchError((onError) {
+                                AppSnackBar(
+                                        title: onError.code,
+                                        message: onError.message)
+                                    .errorSnackBar();
+                              });
+                            }
+                          },
                         ),
                       ),
                     ],
