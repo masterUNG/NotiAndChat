@@ -24,10 +24,14 @@ class WidgetForm extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: marginTop ?? 16),
       width: 250,
+      height: 40,
       child: TextFormField(
         controller: textEditingController,
         obscureText: obsecu ?? false,
-        decoration: InputDecoration(label: labelWidget,
+        decoration: InputDecoration(
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+          label: labelWidget,
           suffixIcon: suffixWidget,
           border: const OutlineInputBorder(),
           filled: true,

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import 'package:notiandchat/states/authen.dart';
 import 'package:notiandchat/states/chat.dart';
+import 'package:notiandchat/utility/app_service.dart';
 
 var getPages = <GetPage<dynamic>>[
   GetPage(
@@ -30,7 +31,10 @@ Future<void> main() async {
       } else {
         //sing In
         initialRoute = '/chat';
-        runApp(MyApp());
+        AppService().findUserModelLogin().then((value) {
+          runApp(MyApp());
+        });
+        
       }
     });
 
